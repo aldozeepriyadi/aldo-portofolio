@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldo Fernando's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Latar belakang dengan efek partikel */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+    
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            /* Menggunakan 100vh untuk memastikan partikel menutupi layar penuh */
+            z-index: -1;
+            /* Pastikan partikel berada di belakang konten */
+        }
+    
+        /* Header dengan latar belakang gelap */
+     
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            /* Pastikan header tetap berada di atas partikel */
+        }
+    
+        header h1 {
+            font-size: 3rem;
+            color: #39b8ff;
+        }
+    
+        header p {
+            font-size: 1.25rem;
+        }
+    
+        .navbar {
+            background-color: #111;
+        }
+    
+        .navbar-nav .nav-link {
+            color: #39b8ff !important;
+        }
+    
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+        }
+    
+        /* Animasi header */
+        header h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+    
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+    
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        /* Footer dengan ikon sosial media */
+        footer {
+            background-color: #111;
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+    
+        footer a {
+            color: #39b8ff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+    
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <header class="bg-dark text-white text-center py-4">
+        
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown text-light">Aldo Fernando's Portfolio</h1>
+            <p class="lead animate__animated animate__fadeInUp text-light">Software Developer | PHP | Java | C#</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="container text-center py-5">
+        <div class="col-lg-3 card mx-auto">
+            <div class="card h-100 animate__animated animate__fadeIn">
+                <div class="card-body">
+                    <img src="assets/PasFotoAldo.jpg" class="card-img-top" alt="Project image" />
+                </div>
+            </div>
+        </div>
+        <h1 class="animate__animated animate__fadeInDown">Welcome to Aldo Fernando's Portfolio</h1>
+        <p class="lead animate__animated animate__fadeInUp">
+            Explore my work, skills, and projects. I specialize in PHP, Java, C#, and much more!
+        </p>
+        <a href="#projects" class="btn btn-primary btn-lg mt-4 animate__animated animate__fadeInUp">View My Projects</a>
+    </div>
+
+    <div id="projects" class="container py-5">
+        <h2 class="text-center mb-5 animate__animated animate__fadeInUp">My Projects</h2>
+        <div class="row" id="projects-container">
+            <!-- Project cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <div id="about" class="container py-5">
+        <h2 class="text-center mb-5 animate__animated animate__fadeInUp">About Me</h2>
+        <p class="text-center animate__animated animate__fadeIn">
+            Saya seorang software developer dengan pengalaman dalam PHP, Java, C#, dan framework seperti Spring Boot,
+            Laravel, dan CodeIgniter.
+        </p>
+        <div class="cv-container text-center mt-5">
+            <iframe src="assets/CV_AldoFernandoS.pdf" width="100%" height="600px" style="border: none;"></iframe>
+        </div>
+        <div class="portofolio-container text-center mt-5">
+            <iframe src="assets/CV_AldoFernandoS.pdf" width="100%" height="600px" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    <div id="contact" class="container py-5">
+        <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Contact</h2>
+        <form class="w-50 mx-auto" id="contactForm">
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 Aldo Fernando. All rights reserved.</p>
+            <p>
+                Follow me on:
+                <a href="https://github.com/aldozeepriyadi" target="_blank" class="text-white mx-2">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/aldo-fernando-491634187" target="_blank" class="text-white mx-2">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:aldo.fernandosupriyadi@gmail.com" class="text-white mx-2">
+                    <i class="bi bi-envelope"></i> Email
+                </a>
+            </p>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script>
+        // Inisialisasi Particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#39b8ff"
+                    },
+                    shape: {
+                        type: "circle",
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        },
+                        image: {
+                            src: "img/github.svg",
+                            width: 100,
+                            height: 100
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#39b8ff",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: "window",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        }
+                    },
+                    modes: {
+                        repulse: {
+                            distance: 100,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+
+            // Animasi dengan GSAP
+            gsap.from("header h1", {
+                duration: 1.5,
+                opacity: 0,
+                y: -50,
+                ease: "power4.out"
+            });
+     
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = [
+                {
+                    title: "Aplikasi Priangan Rental",
+                    description: "Rental mobil dengan C.",
+                    link: "https://github.com/aldozeepriyadi/PrianganRental.git"
+                },
+                {
+                    title: "Aplikasi Sembako Barokah",
+                    description: "Toko sembako dengan C#, Java dan SQL Server.",
+                    link: "https://github.com/aldozeepriyadi/TokoSembakoBarokahJavaGUI.git"
+                },
+                {
+                    title: "Sistem Informasi Conference",
+                    description: "Aplikasi manajemen call for paper dengan menggunakan Codeigniter 3, ASP.NET dan SQL Server",
+                    link: "https://github.com/aldozeepriyadi/Sistem-Informasi-Conference-Codeigniter3.git"
+                },
+                {
+                    title: "Sistem Informasi Preventif Maintanance (Android)",
+                    description: "Aplikasi untuk mendukung pemantauan dan pencatatan layanan pemeliharaan preventif.",
+                    link: "https://github.com/aldozeepriyadi/Sistem-Monitoring-Android-Program-Studi-Alat-Berat-AstraTech.git"
+                },
+                {
+                    title: "Preventif Maintanance (Backend Spring Boot)",
+                    description: "Aplikasi untuk mencatat pemeliharaan preventif pada unit mesin.",
+                    link: "https://github.com/aldozeepriyadi/Sistem-Monitoring-API-Spring-boot-Program-Studi-Alat-Berat.git"
+                },
+                {
+                    title: "Aplikasi Verify Actual at Customer Site",
+                    description: "Solusi inovatif untuk memastikan pengiriman produk sampai ke tujuan dengan tepat waktu.",
+                    link: "https://github.com/aldozeepriyadi/Verify-Actual-At-Customer-Site.git"
+                },
+                {
+                    title: "Dashboard Skillmap Manpower",
+                    description: "Dashboard untuk memetakan dan memonitor keahlian karyawan.",
+                    link: "https://github.com/aldozeepriyadi/Dashboard-skillmap-manpower.git"
+                },
+                {
+                    title: "Migrasi AHMAS Absensi Kedatangan Truk",
+                    description: "Form absensi untuk kedatangan truk di PT Astra Honda Motor.",
+                    link: "#"
+                },
+                {
+                    title: "Sistem Informasi Artikel Penghobby.ID",
+                    description: "Web yang mengulas hobi-hobi yang digandrungi masyarakat.",
+                    link: "https://github.com/aldozeepriyadi/PenhobyID-Artikel.git"
+                }
+            ];
+
+            const container = document.getElementById('projects-container');
+
+            projects.forEach(project => {
+                const projectCard = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 animate__animated animate__fadeIn">
+                            <div class="card-body">
+                                <h5 class="card-title">${project.title}</h5>
+                                <p class="card-text">${project.description}</p>
+                                <a href="${project.link}" class="btn btn-primary" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += projectCard;
+            });
+            (function () {
+                // Ganti "YOUR_PUBLIC_KEY" dengan Public Key (User ID) yang benar dari EmailJS
+                emailjs.init("_Y_nmyD8rQIubZKjA");
+            })();
+
+          document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (email && message) {
+                    const templateParams = {
+                        from_email: email,
+                        message: message,
+                        from_name: "Portfolio Visitor"
+                    };
+
+                    emailjs.send('service_wtt4e66', 'template_vv1u8nq', templateParams)
+                        .then(function (response) {
+                            // SweetAlert2 success alert
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Email Sent',
+                                text: 'Thank you for contacting us. Your email has been sent successfully!',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK'
+                            });
+                            document.getElementById('contactForm').reset();
+                        }, function (error) {
+                            // SweetAlert2 error alert
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Email Failed',
+                                text: 'Failed to send the email. Please try again later.',
+                                confirmButtonColor: '#d33',
+                                confirmButtonText: 'OK'
+                            });
+                            console.error('EmailJS error:', error);
+                        });
+                } else {
+                    // SweetAlert2 warning alert
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Missing Fields',
+                        text: 'Please fill in both fields before submitting.',
+                        confirmButtonColor: '#f0ad4e',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        });
+         // Daftar URL yang valid
+            const validUrls = ['/portofolio.html'];
+
+            // Memeriksa apakah URL yang diminta valid
+            if (!validUrls.includes(window.location.pathname)) {
+                // Jika URL tidak valid, arahkan ke 404.html
+                window.location.href = '/404.html';
+            }
+    </script>
+</body>
+
+</html>
