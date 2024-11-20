@@ -14,7 +14,7 @@
             padding: 0;
             font-family: 'Roboto', sans-serif;
         }
-    
+
         #particles-js {
             position: absolute;
             width: 100%;
@@ -23,9 +23,9 @@
             z-index: -1;
             /* Pastikan partikel berada di belakang konten */
         }
-    
+
         /* Header dengan latar belakang gelap */
-     
+
         header {
             background-color: #111;
             color: #fff;
@@ -35,45 +35,45 @@
             position: relative;
             /* Pastikan header tetap berada di atas partikel */
         }
-    
+
         header h1 {
             font-size: 3rem;
             color: #39b8ff;
         }
-    
+
         header p {
             font-size: 1.25rem;
         }
-    
+
         .navbar {
             background-color: #111;
         }
-    
+
         .navbar-nav .nav-link {
             color: #39b8ff !important;
         }
-    
+
         .navbar-nav .nav-link:hover {
             color: #fff !important;
         }
-    
+
         /* Animasi header */
         header h1 {
             animation: fadeIn 2s ease-in-out;
         }
-    
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
                 transform: translateY(-50px);
             }
-    
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-    
+
         /* Footer dengan ikon sosial media */
         footer {
             background-color: #111;
@@ -82,13 +82,13 @@
             z-index: 1;
             position: relative;
         }
-    
+
         footer a {
             color: #39b8ff;
             margin: 0 10px;
             font-size: 1.5rem;
         }
-    
+
         footer a:hover {
             color: #fff;
         }
@@ -98,25 +98,33 @@
 <body>
     <div id="particles-js"></div>
     <header class="bg-dark text-white text-center py-4">
-        
-        <div class="container">
+
+        <div class="container-fluid">
             <h1 class="animate__animated animate__fadeInDown text-light">Aldo Fernando's Portfolio</h1>
             <p class="lead animate__animated animate__fadeInUp text-light">Software Developer | PHP | Java | C#</p>
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- Tambahkan tombol burger untuk mode mobile -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Tambahkan ID di elemen yang dapat dikembangkan -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
         </div>
     </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div id="home" class="container text-center py-5">
         <div class="col-lg-3 card mx-auto">
@@ -174,20 +182,23 @@
             <p class="mb-1">&copy; 2024 Aldo Fernando. All rights reserved.</p>
             <p>
                 Follow me on:
-                <a href="https://github.com/aldozeepriyadi" target="_blank" class="text-white mx-2">
+                <a href="https://github.com/aldozeepriyadi" target="_blank" class="text-white ">
                     <i class="bi bi-github"></i> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/aldo-fernando-491634187" target="_blank" class="text-white mx-2">
+                <a href="https://www.linkedin.com/in/aldo-fernando-491634187" target="_blank" class="text-white">
                     <i class="bi bi-linkedin"></i> LinkedIn
                 </a>
-                <a href="mailto:aldo.fernandosupriyadi@gmail.com" class="text-white mx-2">
+                <a href="mailto:aldo.fernandosupriyadi@gmail.com" class="text-white ">
                     <i class="bi bi-envelope"></i> Email
                 </a>
             </p>
         </div>
     </footer>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Script yang dibutuhkan -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -197,108 +208,108 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
     <script>
         // Inisialisasi Particles.js
-            particlesJS('particles-js', {
-                particles: {
-                    number: {
-                        value: 80,
-                        density: {
-                            enable: true,
-                            value_area: 800
-                        }
-                    },
-                    color: {
-                        value: "#39b8ff"
-                    },
-                    shape: {
-                        type: "circle",
-                        stroke: {
-                            width: 0,
-                            color: "#000000"
-                        },
-                        polygon: {
-                            nb_sides: 5
-                        },
-                        image: {
-                            src: "img/github.svg",
-                            width: 100,
-                            height: 100
-                        }
-                    },
-                    opacity: {
-                        value: 0.5,
-                        random: false,
-                        anim: {
-                            enable: false,
-                            speed: 1,
-                            opacity_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    size: {
-                        value: 3,
-                        random: true,
-                        anim: {
-                            enable: false,
-                            speed: 40,
-                            size_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    line_linked: {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
                         enable: true,
-                        distance: 150,
-                        color: "#39b8ff",
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 6,
-                        direction: "none",
-                        random: false,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false,
-                        attract: {
-                            enable: false,
-                            rotateX: 600,
-                            rotateY: 1200
-                        }
+                        value_area: 800
                     }
                 },
-                interactivity: {
-                    detect_on: "window",
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: "repulse"
-                        },
-                        onclick: {
-                            enable: true,
-                            mode: "push"
-                        }
+                color: {
+                    value: "#39b8ff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
                     },
-                    modes: {
-                        repulse: {
-                            distance: 100,
-                            duration: 0.4
-                        },
-                        push: {
-                            particles_nb: 4
-                        }
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
                     }
                 },
-                retina_detect: true
-            });
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#39b8ff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "window",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
 
-            // Animasi dengan GSAP
-            gsap.from("header h1", {
-                duration: 1.5,
-                opacity: 0,
-                y: -50,
-                ease: "power4.out"
-            });
-     
+        // Animasi dengan GSAP
+        gsap.from("header h1", {
+            duration: 1.5,
+            opacity: 0,
+            y: -50,
+            ease: "power4.out"
+        });
+
 
         document.addEventListener('DOMContentLoaded', function () {
             const projects = [
@@ -370,7 +381,7 @@
                 emailjs.init("_Y_nmyD8rQIubZKjA");
             })();
 
-          document.getElementById('contactForm').addEventListener('submit', function (event) {
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
                 event.preventDefault();
 
                 const email = document.getElementById('email').value;
@@ -417,15 +428,15 @@
                 }
             });
         });
-         // Daftar URL yang valid
-            const validUrls = ['/portofolio.html'];
-                validUrls = ['/'];
+        // Daftar URL yang valid
+        var validUrls = ['/portofolio.html'];
+        validUrls = ['/'];
 
-            // Memeriksa apakah URL yang diminta valid
-            if (!validUrls.includes(window.location.pathname)) {
-                // Jika URL tidak valid, arahkan ke 404.html
-                window.location.href = '/404.html';
-            }
+        // Memeriksa apakah URL yang diminta valid
+        if (!validUrls.includes(window.location.pathname)) {
+            // Jika URL tidak valid, arahkan ke 404.html
+            window.location.href = '/404.html';
+        } 
     </script>
 </body>
 
